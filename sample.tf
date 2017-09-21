@@ -1,15 +1,10 @@
-provider "aws" {
-    region = "us-east-1"
-    
+    region = "${var.INSTANCE_TYPE}"
+
 }
-
-
 resource "aws_instance" "web" {
-  instance_type = "t2.nano"
-  ami = "ami-cd0f5cb6"
-  key_name = "sudheer-virginia"
-
-
+  instance_type = "${var.INSTANCE_TYPE}"
+  ami = "${var.AMI_ID}"
+  key_name = "${var.KEY_NAME}"
   # We set the name as a tag
   tags {
     "Name" = "MyTF1"
