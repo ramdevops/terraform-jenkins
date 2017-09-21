@@ -1,5 +1,5 @@
 provider "aws" {
-    region = "${var.INSTANCE_TYPE}"
+    region = "${var.REGION}"
 
 }
 resource "aws_instance" "web" {
